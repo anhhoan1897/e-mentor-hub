@@ -24,7 +24,7 @@
       box-sizing: border-box;
       box-shadow: 0px 7px 64px rgb(0 0 0 / 7%);
       border-radius: 8px;
-      padding: 30px;
+      padding: 20px;
       transition: 0.3s all;
       .choose-role-img {
         width: 96px;
@@ -36,7 +36,7 @@
         width: calc(100% - 96px);
         box-sizing: border-box;
         padding-left: 25px;
-        padding-right: 40px;
+        padding-right: 20px;
         position: relative;
         cursor: pointer;
         & h4 {

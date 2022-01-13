@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import mentee from "../images/mentee.png";
 import mentor from "../images/mentor.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { useForm } from "react-hook-form";
 
 export default function Index() {
+  const [inputEmail, setInputEmail] = useState();
+  const [passwordInput, setPasswordInput] = useState();
+  const [reInputPassword, setReinputPassword] = useState();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   return (
     <div className="authenicate-container">
       <div className="left-side-bar">
@@ -31,7 +41,7 @@ export default function Index() {
               />
             </Link>
           </div>
-          <div className="content-container">
+          {/* <div className="content-container">
             <h1 className="title-login">Chọn vai trò của bạn</h1>
             <p>
               Khám phá các kỹ năng mới, gặp gỡ những người cố vấn đầy nhiệt
@@ -74,6 +84,17 @@ export default function Index() {
                 </div>
               </li>
             </ul>
+          </div> */}
+          <div className="register-form-container">
+            <h1>Đăng ký</h1>
+            <form>
+              <p>Email</p>
+              <input
+                placeholder="Nhập email của bạn"
+                value={inputEmail}
+                onChange={(e) => setInputEmail(e.target.value)}
+              />
+            </form>
           </div>
         </section>
       </div>
