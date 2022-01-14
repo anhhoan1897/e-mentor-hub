@@ -1,23 +1,13 @@
 @import "./authen.scss";
-
 .authenicate-container {
-  .right-side-user {
-    .options-container {
+    .right-side-user {
       .content-container {
-        .title-option {
-          font-weight: 600;
-          font-size: 36px;
-          text-align: left;
-          margin-bottom: 15px;
-          text-transform: unset;
-        }
-
-        .title-register {
-            
-        }
-
-        & p {
-          margin-bottom: 40px;
+        .title-login {
+            font-weight: 600;
+            font-size: 36px;
+            text-align: left;
+            margin-bottom: 15px;
+            text-transform: unset;
         }
 
         .choose-role {
@@ -72,8 +62,9 @@
             margin-bottom: 20px;
           }
         }
+  
       }
-      .submit-register-button {
+      .submit-authen-button {
         height: 56px;
         border-radius: 6px;
         background-color: #f15b5a;
@@ -97,4 +88,4 @@
       }
     }
   }
-}
+  
