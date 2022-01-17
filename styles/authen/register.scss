@@ -3,23 +3,47 @@
 .authenicate-container {
   .right-side-user {
     .options-container {
-      .content-container {
-        .title-option {
-          font-weight: 600;
-          font-size: 36px;
-          text-align: left;
-          margin-bottom: 15px;
-          text-transform: unset;
-        }
-
+      .register {
         .title-register {
-            
         }
 
         & p {
           margin-bottom: 40px;
         }
 
+        .submit-authen-button {
+          height: 56px;
+          border-radius: 6px;
+          background-color: #f15b5a;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 20px;
+          text-transform: unset;
+          letter-spacing: unset;
+          width: 100%;
+          /* padding: 0 10px; */
+          color: #ffffff;
+          border: none;
+          margin-top: 40px;
+          cursor: pointer;
+          /* background-color: rgba(203, 203, 203, 0.5) !important; */
+          -webkit-transition: 0.5s all;
+          -moz-transition: 0.5s all;
+          -ms-transition: 0.5s all;
+          -o-transition: 0.5s all;
+          transition: 0.5s all;
+        }
+      }
+
+      .register-role {
+        .title-option {
+            font-weight: 600;
+            font-size: 36px;
+            text-align: left;
+            margin-bottom: 15px;
+            text-transform: unset;
+          }
+  
         .choose-role {
           margin: 0;
           .choose-role-li {
@@ -72,28 +96,6 @@
             margin-bottom: 20px;
           }
         }
-      }
-      .submit-register-button {
-        height: 56px;
-        border-radius: 6px;
-        background-color: #f15b5a;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 20px;
-        text-transform: unset;
-        letter-spacing: unset;
-        width: 100%;
-        /* padding: 0 10px; */
-        color: #ffffff;
-        border: none;
-        margin-top: 40px;
-        cursor: pointer;
-        /* background-color: rgba(203, 203, 203, 0.5) !important; */
-        -webkit-transition: 0.5s all;
-        -moz-transition: 0.5s all;
-        -ms-transition: 0.5s all;
-        -o-transition: 0.5s all;
-        transition: 0.5s all;
       }
     }
   }

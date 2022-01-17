@@ -45,7 +45,7 @@ function Register() {
             </Link>
           </div>
           {isChoose ? (
-            <div className="content-container">
+            <div className="content-container register">
               <h1 className="title-form title-register">Đăng ký</h1>
               <form className="authen-form" onSubmit={handleSubmit(onSubmit)}>
                 <section className="input-field register-field">
@@ -90,13 +90,13 @@ function Register() {
                     className="input-field"
                   />
                 </section>
-                <button className="submit-authen-button" type="submit">
-                  Tạo tài khoản
-                </button>
               </form>
+              <button className="submit-authen-button" type="submit">
+                Tạo tài khoản
+              </button>
             </div>
           ) : (
-            <div className="content-container">
+            <div className="content-container register-role">
               <h1 className="title-form title-option">Chọn vai trò của bạn</h1>
               <p>
                 Khám phá các kỹ năng mới, gặp gỡ những người cố vấn đầy nhiệt

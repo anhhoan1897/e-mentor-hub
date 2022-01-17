@@ -43,36 +43,39 @@ export default function Login() {
               />
             </Link>
           </div>
-          <div className="content-container">
+          <div className="content-container login">
             <h1 className="title-form title-login">Xin chào từ eMentorHub</h1>
             <p>Chào mừng trở lại! Xin hãy đăng nhập vào tài khoản của bạn</p>
-            <section className="options-container">
+            <section className="login-form-container">
               <form onSubmit={handleSubmit(onSubmit)} className="authen-form">
-                <label>Email</label>
-                <input
-                  type="email"
-                  placeholder="Nhập Email của bạn..."
-                  {...register("email")}
-                  className="input-field"
-                />
-                <label>Mật khẩu</label>
-                <input
-                  type="password"
-                  placeholder="Nhập mật khẩu của bạn..."
-                  {...register("password")}
-                  className="input-field"
-                />
-                <input />
-                <Link href="#">
-                  <a>Quên mật khẩu</a>
-                </Link>
+                <section className="input-field login-field">
+                  <label>Email</label>
+                  <input
+                    type="email"
+                    placeholder="Nhập Email của bạn..."
+                    {...register("email")}
+                    className="input-field"
+                  />
+                </section>
+                <section className="input-field login-field">
+                  <label>Mật khẩu</label>
+                  <input
+                    type="password"
+                    placeholder="Nhập mật khẩu của bạn..."
+                    {...register("password")}
+                    className="input-field"
+                  />
+                </section>
+                  <Link href="#">
+                    <a className="forgot-password">Quên mật khẩu</a>
+                  </Link>
                 <button className="submit-authen-button">Đăng nhập</button>
-                <span>
-                  Chưa có tài khoản{" "}
+                <div className="register-direction">
+                  <span>Chưa có tài khoản </span>
                   <Link href="#">
                     <a>Đăng ký</a>
                   </Link>
-                </span>
+                </div>
               </form>
             </section>
           </div>
