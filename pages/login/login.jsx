@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import mentee from "../images/mentee.png";
-import mentor from "../images/mentor.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useForm } from "react-hook-form";
 
 export default function Login() {
