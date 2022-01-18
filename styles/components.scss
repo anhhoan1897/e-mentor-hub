@@ -1,0 +1,33 @@
+@import "../components/navigation-header/navigation-header.module.scss";
+@import "../components/navigation-footer/navigation-footer.module.scss";
+
+.m-top-50 {
+  margin-top: 50px;
+}
+
+.m-bottom-30 {
+  margin-bottom: 30px;
+}
+
+.container {
+  background-color: transparent;
+  .nav-link {
+    color: black;
+  }
+}
+
+.col-md-6 {
+  position: relative;
+  // width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+// .row {
+//     display: flex;
+//     -ms-flex-wrap: wrap;
+//     flex-wrap: wrap;
+//     margin-right: -15px;
+//     margin-left: -15px;
+// }
+
