@@ -88,3 +88,10 @@ select:focus {
   border-color: #eaedf0 !important;
   outline: none;
 }
+
+:root {
+  --title: #1c2025;
+  --content: #475261;
+  --white: #ffffff;
+  --active: #f15b5a;
+}

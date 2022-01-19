@@ -5,14 +5,18 @@ import "../styles/authen/login.scss";
 import "../styles/home/home.scss";
 import "../styles/components.scss";
 
-import NavigationHeader from "../components/navigation-header/navigation-header";
-import NavigationFooter from "../components/navigation-footer/navigation-footer";
-function MyApp({ Component, pageProps }) {
+import Header from "../components/header";
+import Footer from "../components/footer";
+import Banner from "../components/banner";
+import SelectRole from "../components/selectRole";
+
+function MyApp() {
   return (
     <>
-      <NavigationHeader />
-      <Component {...pageProps} />
-      <NavigationFooter />
+      <Header />
+      <Banner/>
+      <SelectRole />
+      <Footer />
     </>
   );
 }
