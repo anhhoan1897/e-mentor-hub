@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 export default function Login() {
   const {
@@ -13,7 +14,26 @@ export default function Login() {
 
   console.log(watch("email"));
   const onSubmit = (data) => {
-    console.log(data);
+    axios({
+      method: 'post',
+      mode: 'no-cors',
+      url: 'http://localhost:3000/api/v1/users/login',
+      withCredentials: false,
+      headers: {
+        'Access-Control-Allow-Origin' : '*',
+        'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+      },
+      data: {
+        email: data.email,
+        password: data.password
+      }
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   };
   return (
     <div className="authenicate-container">

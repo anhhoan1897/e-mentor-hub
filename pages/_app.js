@@ -7,15 +7,11 @@ import "../styles/components.scss";
 
 import Header from "../components/header";
 import Footer from "../components/footer";
-import Banner from "../components/banner";
-import SelectRole from "../components/selectRole";
-
-function MyApp() {
+function MyApp({ Component, pageProps }) {
   return (
     <>
       <Header />
-      <Banner/>
-      <SelectRole />
+      <Component {...pageProps} />
       <Footer />
     </>
   );
