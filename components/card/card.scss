@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .capitalize {
   text-transform: capitalize;
 }
@@ -33,3 +34,13 @@ a:hover {
   background-color: #f58584;
   color: var(--white);
 }
+=======
+.link a {
+    border: 1px solid #F58584;
+    border-radius: 6px;
+    padding: 8px 20px;
+    color: var(--active);
+    display: inline-block;
+    transition: .2s all ease-in-out;
+  }
+>>>>>>> 50b7e477811d848b984963c809868f9e41504dc7
