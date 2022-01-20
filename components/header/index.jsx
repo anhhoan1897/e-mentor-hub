@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import style from "./navigation-header.module.scss";
 import {
   ButtonGroup,
   Container,

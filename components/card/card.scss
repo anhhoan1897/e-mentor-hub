@@ -1,0 +1,35 @@
+.capitalize {
+  text-transform: capitalize;
+}
+
+.link a {
+  border: 1px solid #f58584;
+  border-radius: 6px;
+  padding: 8px 20px;
+  color: var(--active);
+  display: inline-block;
+  transition: 0.2s all ease-in-out;
+}
+
+.link.bg-link a {
+  background-color: #fcd9d9;
+}
+
+.link a {
+  border: 1px solid #f58584;
+  border-radius: 6px;
+  padding: 8px 20px;
+  color: var(--active);
+  display: inline-block;
+  transition: 0.2s all ease-in-out;
+}
+
+.link.bg-link a:hover {
+  background-color: var(--active);
+  color: var(--white);
+}
+
+a:hover {
+  background-color: #f58584;
+  color: var(--white);
+}

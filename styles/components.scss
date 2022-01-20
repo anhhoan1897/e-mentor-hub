@@ -1,5 +1,36 @@
-@import "../components/navigation-header/navigation-header.module.scss";
-@import "../components/navigation-footer/navigation-footer.module.scss";
+@import "../components/header/header.scss";
+@import "../components/footer/footer.scss";
+@import "../components/banner/banner.scss";
+@import "../components/selectRole/selectRole.scss";
+@import "../components/card/card.scss";
+
+.bg-blue {
+  background: #D5E9FA;
+}
+
+.p-top-60 {
+  padding-top: 60px;
+}
+
+.p-top-40 {
+  padding-top: 40px;
+}
+
+.p-bottom-40 {
+  padding-bottom: 40px;
+}
+
+.m-top-30 {
+  margin-top: 30px;
+}
+
+.m-bottom-10 {
+  margin-bottom: 10px;
+}
+
+.m-bottom-20 {
+  margin-bottom: 20px;
+}
 
 .m-top-50 {
   margin-top: 50px;
@@ -9,7 +40,16 @@
   margin-bottom: 30px;
 }
 
+.fw-600 {
+  font-weight: 600;
+}
+
+.fz-20 {
+  font-size: 20px;
+}
+
 .container {
+  max-width: 1200px;
   background-color: transparent;
   .nav-link {
     color: black;

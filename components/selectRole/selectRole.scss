@@ -1,0 +1,51 @@
+.select-role .items .item:nth-child(2n + 1) .inner {
+  border: 1px solid #f58584;
+}
+
+.select-role .items .item:nth-child(2n) .inner {
+  border: 1px solid #6979F8;
+}
+
+.select-role .items .inner {
+  border-radius: 8px;
+  box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+}
+
+.select-role .items .top .content {
+  padding: 0 20px;
+}
+
+.select-role .items .bottom ul li {
+  padding-left: 33px;
+  position: relative;
+}
+
+.select-role .items .bottom ul li::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: url('../../assets/images/check.png') center no-repeat;
+  background-size: 100%;
+}
+
+.select-role .items .item:nth-child(2n + 1) .bottom {
+  border-radius: 8px;
+  background: #f58584;
+}
+
+.select-role .items .item:nth-child(2n) .bottom {
+  border-radius: 8px;
+  background: #6979F8;
+}
+
+.select-role .items .bottom {
+  padding: 40px 20px;
+}
+
+.select-role .items .bottom .content {
+  height: 220px;
+}
