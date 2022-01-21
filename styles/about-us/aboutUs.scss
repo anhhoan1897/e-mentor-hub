@@ -1,0 +1,42 @@
+.about-welcome {
+  background: center no-repeat;
+  background-size: cover;
+  background-image: url(../../assets/images/aboutUsBanner.png);
+  padding: 120px 0px;
+  .welcome-container {
+    text-align: center !important;
+    margin-left: -32px;
+    margin-right: -32px;
+    margin-bottom: 40px;
+    .title {
+      color: var(--title);
+      font-size: 44px;
+      font-weight: 600;
+    }
+    .welcome-content {
+      margin-bottom: 0px;
+      font-weight: 600;
+      font-size: 20px;
+      .paragraph-content {
+        background: white;
+        margin: 0.75rem 0px 0px;
+        box-sizing: border-box;
+        font-variant-ligatures: normal;
+        font-variant-caps: normal;
+        orphans: 2;
+        white-space: pre-wrap;
+        widows: 2;
+        -webkit-text-stroke-width: 0px;
+        text-decoration-thickness: initial;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+        word-spacing: 0px;
+        & span {
+            font-family: 'Segoe UI',sans-serif;
+            color: #172b4d;
+            letter-spacing: -.05pt;
+        }
+      }
+    }
+  }
+}
