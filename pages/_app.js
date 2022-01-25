@@ -5,8 +5,8 @@ import "../styles/authen/login.scss";
 import "../styles/home/home.scss";
 import "../styles/components.scss";
 
-import Header from "../components/header";
-import Footer from "../components/footer";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 function MyApp({ Component, pageProps }) {
   return (
     <>
