@@ -1,7 +1,10 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import Banner from "../components/banner"
-import SelectRole from "../components/selectRole"
+import Banner from "../components/Banner"
+import SelectRole from "../components/SelectRole"
+import FeaturedMentor from "../components/FeaturedMentor"
+import Blog from "../components/Blog"
+import FAQ from "../components/FAQ"
+import Contact from "../components/Contact"
 
 export default function Home() {
   return (
@@ -14,6 +17,16 @@ export default function Home() {
       <main>
         <Banner/>
         <SelectRole/>
+        <FeaturedMentor/>
+        <Blog/>
+        <div className="terms-and-contact p-top-80 p-bottom-80">
+          <div className="container">
+            <div className="row">
+              <FAQ/>
+              <Contact/>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   )

@@ -1,11 +1,25 @@
-@import "../components/header/header.scss";
-@import "../components/footer/footer.scss";
-@import "../components/banner/banner.scss";
-@import "../components/selectRole/selectRole.scss";
-@import "../components/card/card.scss";
+@import "../components/Header/header.scss";
+@import "../components/Footer/footer.scss";
+@import "../components/Banner/banner.scss";
+@import "../components/SelectRole/select-role.scss";
+@import "../components/Card/card.scss";
+@import "../components/FeaturedMentor/featured-mentor.scss";
+@import "../components/Blog/blog.scss";
+@import "../components/BlogItem/blog-item.scss";
+@import "../components/Contact/contact.scss";
+@import "../components/FAQ/faq.scss";
+
 
 .bg-blue {
   background: #D5E9FA;
+}
+
+.p-bottom-80 {
+  padding-bottom: 80px;
+}
+
+.p-top-80 {
+  padding-top: 80px;
 }
 
 .p-top-60 {
@@ -18,6 +32,10 @@
 
 .p-bottom-40 {
   padding-bottom: 40px;
+}
+
+.p-bottom-80 {
+  padding-bottom: 80px;
 }
 
 .m-top-30 {
@@ -58,16 +76,14 @@
 
 .col-md-6 {
   position: relative;
-  // width: 100%;
   padding-right: 15px;
   padding-left: 15px;
 }
 
-// .row {
-//     display: flex;
-//     -ms-flex-wrap: wrap;
-//     flex-wrap: wrap;
-//     margin-right: -15px;
-//     margin-left: -15px;
-// }
+.cl-black {
+  color: var(--title);
+}
 
+.terms-and-contact {
+  background: #F9FAFB;
+}

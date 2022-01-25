@@ -1,0 +1,58 @@
+.faq .item {
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s all ease-in-out;
+  margin: 20px;
+}
+
+.faq .inner {
+  padding: 20px;
+  padding-right: 70px;
+}
+
+.bg-white {
+  background: var(--white);
+}
+
+.faq .info {
+  margin-left: 16px;
+  width: calc(100% - 48px);
+}
+
+.faq .info .title {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+// .faq .link-icon {
+//   position: absolute;
+//   right: 20px;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   transition: 0.3s all ease-in-out;
+//   opacity: 0;
+//   visibility: hidden;
+// }
+
+.link-icon a {
+    border: 1px solid #F58584;
+    color: var(--active);
+    padding: 8px;
+    display: inline-block;
+    border-radius: 6px;
+    line-height: 22px;
+    width: 40px;
+    text-align: center;
+  }
+
+.link-icon a::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url("../../assets/images/arrow-right.png") no-repeat center;
+  background-size: auto;
+  background-size: 16px;
+}

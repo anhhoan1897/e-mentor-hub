@@ -1,5 +1,5 @@
 import React from "React";
-import Card from "../card";
+import Card from "../Card";
 import menteeImg from "../../assets/images/menteeRole.png";
 import mentorImg from "../../assets/images/mentorRole.png";
 
@@ -31,25 +31,25 @@ function SelectRole() {
     return (
         <section className="select-role p-top-40 p-bottom-40 bg-blue">
             <div className="container">
-            <div className="group_title text-center">
-                <h2 className="cl-black fz-30 fw-600 m-bottom-30">Choose Your Role</h2>
-            </div>
-            <div className="row items">
-                <Card 
-                    src={menteeImg}
-                    role="mentee"
-                    shortDescription={menteeShortDescription}
-                    descriptionArray={menteeDescriptionArray}
-                    buttonContent={menteeButtonContent}
-                />
-                <Card 
-                    src={mentorImg}
-                    role="mentor"
-                    shortDescription={mentorShortDescription}
-                    descriptionArray={mentorDescriptionArray}
-                    buttonContent={mentorButtonContent}
-                />
-            </div>
+                <div className="group_title text-center">
+                    <h2 className="cl-black fz-30 fw-600 m-bottom-30">Choose Your Role</h2>
+                </div>
+                <div className="row items">
+                    <Card 
+                        src={menteeImg}
+                        role="mentee"
+                        shortDescription={menteeShortDescription}
+                        descriptionArray={menteeDescriptionArray}
+                        buttonContent={menteeButtonContent}
+                    />
+                    <Card 
+                        src={mentorImg}
+                        role="mentor"
+                        shortDescription={mentorShortDescription}
+                        descriptionArray={mentorDescriptionArray}
+                        buttonContent={mentorButtonContent}
+                    />
+                </div>
             </div>
         </section>
     )
