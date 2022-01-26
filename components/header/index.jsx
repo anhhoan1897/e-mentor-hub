@@ -23,7 +23,6 @@ export default function NavigationHeader() {
   return (
     <Navbar
       variant="light"
-      bg="light"
       fixed="top"
       className="navigation-header-container"
     >

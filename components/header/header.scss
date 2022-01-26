@@ -1,7 +1,7 @@
 .navigation-header-container {
   padding: 16px 0;
-  position: relative;
-
+  position: fixed;
+  background-color: white;
   .container {
     .nav-menu-items {
       margin-left: auto !important;
