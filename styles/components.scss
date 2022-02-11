@@ -66,6 +66,17 @@
   font-size: 20px;
 }
 
+.error {
+  width: 100%;
+  color: red;
+  font-size: 14px;
+  position: absolute;
+}
+
+.input-validate {
+  margin-bottom: 6px !important;
+}
+
 .container {
   max-width: 1200px;
   background-color: transparent;
