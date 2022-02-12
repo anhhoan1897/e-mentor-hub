@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from 'next/head'
 import Banner from "../components/Banner"
 import SelectRole from "../components/SelectRole"
