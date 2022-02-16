@@ -8,93 +8,91 @@
 @import "../components/BlogItem/blog-item.scss";
 @import "../components/Contact/contact.scss";
 @import "../components/FAQ/faq.scss";
-
-
 .bg-blue {
-  background: #D5E9FA;
+    background: #D5E9FA;
 }
 
 .p-bottom-80 {
-  padding-bottom: 80px;
+    padding-bottom: 80px;
 }
 
 .p-top-80 {
-  padding-top: 80px;
+    padding-top: 80px;
 }
 
 .p-top-60 {
-  padding-top: 60px;
+    padding-top: 60px;
 }
 
 .p-top-40 {
-  padding-top: 40px;
+    padding-top: 40px;
 }
 
 .p-bottom-40 {
-  padding-bottom: 40px;
+    padding-bottom: 40px;
 }
 
 .p-bottom-80 {
-  padding-bottom: 80px;
+    padding-bottom: 80px;
 }
 
 .m-top-30 {
-  margin-top: 30px;
+    margin-top: 30px;
 }
 
 .m-bottom-10 {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .m-bottom-20 {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .m-top-50 {
-  margin-top: 50px;
+    margin-top: 50px;
 }
 
 .m-bottom-30 {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .fw-600 {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .fz-20 {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 .error {
-  width: 100%;
-  color: red;
-  font-size: 14px;
-  position: absolute;
+    width: 100%;
+    color: red;
+    font-size: 14px;
+    position: absolute;
 }
 
 .input-validate {
-  margin-bottom: 6px !important;
+    margin-bottom: 6px !important;
 }
 
 .container {
-  max-width: 1200px;
-  background-color: transparent;
-  .nav-link {
-    color: black;
-  }
+    max-width: 1200px;
+    background-color: transparent;
+    .nav-link {
+        color: black;
+    }
 }
 
 .col-md-6 {
-  position: relative;
-  padding-right: 15px;
-  padding-left: 15px;
+    position: relative;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 .cl-black {
-  color: var(--title);
+    color: var(--title);
 }
 
 .terms-and-contact {
-  background: #F9FAFB;
+    background: #F9FAFB;
 }
