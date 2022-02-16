@@ -39,7 +39,7 @@ export default function NavigationHeader() {
             <NavDropdown.Item>Mentor</NavDropdown.Item>
             <NavDropdown.Item>Mentee</NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link href="#">Về chúng tôi</Nav.Link>
+          <Nav.Link href="about-us">Về chúng tôi</Nav.Link>
           <Nav.Link href="#">Blog</Nav.Link>
           <Nav.Link href="#">FAQs</Nav.Link>
           <Nav.Link href="#">Tuyển dụng</Nav.Link>
