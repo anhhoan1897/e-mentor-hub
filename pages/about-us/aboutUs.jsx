@@ -10,13 +10,12 @@ export default function AboutUs() {
           <Container>
             <Row>
               <Col md={{ span: 6, offset: 3 }}>
-                <div className="welcome-container">
+                <div className="welcome-container p-top-30">
                   <h1 className="title">Lời chào từ eMentorHub</h1>
                   <div className="welcome-content">
                     <p style={{ margin: "0cm", background: "white" }}></p>
                     <p className="paragraph-content">
                       <span>
-                        {" "}
                         Xin chào! Nhiệm vụ của eMentorHub Việt Nam là cung cấp
                         một nền tảng cố vấn nhằm hỗ trợ người dùng{" "}
                         <span className="inline-welcome">phát triển </span>
