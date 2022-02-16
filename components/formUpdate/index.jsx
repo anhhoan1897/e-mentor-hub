@@ -1,7 +1,9 @@
 import React from "react";
+import { useState } from "react";
 
 export default function FormUpdate() {
     var text = "One\nTwo\nThree";
+    const [name, setName] = useState("");
   return (
       <div className="page">
           <div className="content">
@@ -102,7 +104,8 @@ export default function FormUpdate() {
                                                         <input 
                                                             className="update_mentor_firstname style_input_text"
                                                             id="update_mentor_firstname" 
-                                                            value="" 
+                                                            value={name}
+                                                            onChange={(e) => setName(e.target.value)} 
                                                             type="text" 
                                                             name="update_mentor_firstname"/>
                                                     </li>
@@ -112,7 +115,9 @@ export default function FormUpdate() {
                                                         <input 
                                                             className="update_mentor_lastname style_input_text" 
                                                             id="update_mentor_lastname" 
-                                                            value="" type="text" 
+                                                            value={name}
+                                                            onChange={(e) => setName(e.target.value)}
+                                                            type="text" 
                                                             name="update_mentor_lastname"/>
                                                     </li>
 
