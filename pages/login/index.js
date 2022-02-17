@@ -2,39 +2,41 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+import Api from '../../api/api';
+import cookie from 'react-cookies';
+import { useRouter } from 'next/router'
+
+const schema = yup.object().shape({
+  email: yup.string().required('Email can not be null').email("Invalid email format"),
+  password: yup.string().required('Password can not be null')
+               .min(8, 'Password has to at least 8 characters'),
+              //  .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/, 'The password must contain at least one uppercase character, one lowercase character, one digit and one special character'),
+});
 
 export default function Login() {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    mode: 'onChange',
+    resolver: yupResolver(schema)
+  });
+  const router = useRouter()
+  const [error, setError] = useState('');
 
-  console.log(watch("email"));
-  const onSubmit = (data) => {
-    axios({
-      method: 'post',
-      mode: 'no-cors',
-      url: 'http://localhost:3000/api/v1/users/login',
-      withCredentials: false,
-      headers: {
-        'Access-Control-Allow-Origin' : '*',
-        'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-      },
-      data: {
-        email: data.email,
-        password: data.password
-      }
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  const onSubmit = async (values) => {
+    try {
+      const data = await Api.login(values);
+      cookie.save('token', data);
+      setError('');
+      router.push('/update-mentee');
+    } catch (err) {
+      let data = err.response.data;
+      let errorMessage = data.errors ? data.errors[0].errorMessage : data;
+      setError(errorMessage);
+      setTimeout(() => {setError('')}, 2000);
+    }
   };
+
   return (
     <div className="authenicate-container">
       <div className="left-side-bar">
@@ -70,8 +72,9 @@ export default function Login() {
                     type="email"
                     placeholder="Nhập Email của bạn..."
                     {...register("email")}
-                    className="input-field"
+                    className="input-field input-validate"
                   />
+                  {errors.email && <p className="error">{errors.email.message}</p>}
                 </section>
                 <section className="input-field login-field">
                   <label>Mật khẩu</label>
@@ -79,8 +82,10 @@ export default function Login() {
                     type="password"
                     placeholder="Nhập mật khẩu của bạn..."
                     {...register("password")}
-                    className="input-field"
+                    className="input-field input-validate"
                   />
+                  {errors.password && <p className="error">{errors.password.message}</p>}
+                  <p className="error">{error}</p>
                 </section>
                   <Link href="#">
                     <a className="forgot-password">Quên mật khẩu</a>

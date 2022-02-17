@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import cookie from 'react-cookies';
+import { useRouter } from 'next/router'
 // import mentee from "../../assets/images/mentee.png";
 // import mentor from "../../assets/images/mentor.png";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,8 +10,10 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-// import { useHistory } from "react-router-dom";
 import Api from '../../api/api';
+import { Modal, ModalBody } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 
 const schema = yup.object().shape({
   email: yup.string().required('Email can not be null').email("Invalid email format"),
@@ -25,7 +29,9 @@ const schema = yup.object().shape({
 
 function Register() {
   // const [isChoose, setIsChoose] = useState(false);
-  // let history = useHistory();
+  const router = useRouter()
+  const [error, setError] = useState('');
+  const [toggleModal, setToggleModal] = useState(false);
 
   const { register, handleSubmit, formState: { errors } } = useForm({
     mode: 'onChange',
@@ -37,17 +43,29 @@ function Register() {
       const data = await Api.signup(values);
       cookie.save('token', data);
       setError('');
-      // history.push('/');
+      setToggleModal(true);
+      setTimeout(() => {setToggleModal(false)}, 3000);
+      setTimeout(() => {router.push('/')}, 3000);
     }
     catch (err) {
       let data = err.response.data;
       let errorMessage = data.errors ? data.errors[0].errorMessage : data;
       setError(errorMessage);
       setTimeout(() => {setError('')}, 2000);
+      console.error(errorMessage);
     }
   }
+
   return (
     <div className="authenicate-container">
+      <Modal isOpen={toggleModal}>
+        <ModalBody className='justify-content-center'>
+          <div className="register-modal">
+          <FontAwesomeIcon icon={faCheckCircle} size="4x" color="green"/><br/>
+          Đăng ký thành công. Vui lòng kiểm tra Email.
+          </div>
+        </ModalBody>
+      </Modal>
       <div className="left-side-bar">
         <h2 className="text-center">
           A powerful <br /> platform for{" "}
@@ -113,6 +131,7 @@ function Register() {
                     className="input-field input-validate"
                   />
                   {errors.phone && <p className="error">{errors.phone.message}</p>}
+                  <p className="error">{error}</p>
                 </section>
                 <button className="submit-authen-button" type="submit">
                   Tạo tài khoản
