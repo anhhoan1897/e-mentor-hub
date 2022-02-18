@@ -40,7 +40,7 @@ export default function NavigationFooter() {
           </div>
         </Container>
       </div>
-      <div className="footer-bottom m-top-50">
+      <div className="footer-bottom m-top-50 m-bottom-30">
         <Container>
           <Row>
             <Col md={6}>
