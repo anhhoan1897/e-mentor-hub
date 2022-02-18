@@ -7,7 +7,7 @@ import Blog from "../components/Blog"
 import FAQ from "../components/FAQ"
 import Contact from "../components/Contact"
 import FormUpdate from '../components/formUpdate'
-import MentoringDashboard from './mentoring-dashboard/metoringDashboard'
+import MentoringDashboard from './mentoring-dashboard/mentoringDashboard'
 // import Calendar from '../components/calendar/calendar'
 import BasicCalendar from '../components/calendar/calendar';
 
