@@ -6,17 +6,18 @@ import "../styles/home/home.scss";
 import "../styles/about-us/aboutUs.scss";
 import "../styles/components.scss";
 
+import { SSRProvider } from "@react-aria/ssr";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <SSRProvider>
       <Header />
       <div className="page" style={{ marginTop: "110px" }}>
         <Component {...pageProps} />
       </div>
       <Footer />
-    </>
+    </SSRProvider>
   );
 }
 
