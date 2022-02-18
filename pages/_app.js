@@ -9,12 +9,15 @@ import "react-big-calendar/lib/sass/styles.scss";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { SSRProvider } from "@react-aria/ssr";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
+      <SSRProvider>
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
+      </SSRProvider>
     </>
   );
 }
