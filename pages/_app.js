@@ -5,6 +5,7 @@ import "../styles/authen/login.scss";
 import "../styles/home/home.scss";
 import "../styles/components.scss";
 import "../styles/bootstrap.min.css";
+import "react-big-calendar/lib/sass/styles.scss";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";

@@ -2,7 +2,6 @@ import React from "react";
 import SidebarAccount from "../sidebarAccount/sidebarAccount";
 
 export default function MentoringDashboard() {
-    var text = "One\nTwo\nThree";
     return (
         <div id="page" className="site hfeed">
             <div id="content" className="site-content">

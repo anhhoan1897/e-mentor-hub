@@ -7,7 +7,9 @@ import Blog from "../components/Blog"
 import FAQ from "../components/FAQ"
 import Contact from "../components/Contact"
 import FormUpdate from '../components/formUpdate'
-import MentoringDashboard from '../components/mentoringDashboard/metoringDashboard';
+import MentoringDashboard from '../components/mentoringDashboard/metoringDashboard'
+// import Calendar from '../components/calendar/calendar'
+import BasicCalendar from '../components/calendar/calendar';
 
 export default function Home() {
   return (
@@ -32,6 +34,7 @@ export default function Home() {
         </div> */}
         {/* <FormUpdate/> */}
         <MentoringDashboard/>
+        {/* <BasicCalendar/> */}
       </main>
     </div>
   )
