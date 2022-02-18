@@ -1,1 +1,1 @@
-export { default } from "./metoringDashboard";
+export { default } from "./mentoringDashboard";

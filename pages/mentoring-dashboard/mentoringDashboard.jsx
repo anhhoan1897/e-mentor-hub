@@ -1,14 +1,17 @@
 import React from "react";
 import SidebarAccount from "../../components/sidebarAccount/sidebarAccount";
+import { useRouter } from "next/router";
 
 export default function MentoringDashboard() {
+  const router = useRouter();
+  const currentRoute = router.pathname;
   return (
     <div id="page" className="site hfeed">
       <div id="content" className="site-content">
         <section className="section account_page">
           <div className="container">
             <div className="row">
-              <SidebarAccount />
+              <SidebarAccount currentRouter={currentRoute} />
               <div className="col-lg-9 col-12">
                 <h3 className="title">My Progress</h3>
                 <div className="list_step">
