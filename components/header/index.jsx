@@ -19,7 +19,7 @@ const languages = [
 export default function NavigationHeader() {
   const [checked, setChecked] = useState(false);
   const [languageValue, setLanguageValue] = useState("vn");
-  console.log(languageValue);
+  // console.log(languageValue);
   return (
     <Navbar
       variant="light"
