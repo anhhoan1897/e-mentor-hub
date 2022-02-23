@@ -32,7 +32,7 @@ export default function Home() {
             </div>
           </div>
         </div> */}
-        {/* <FormUpdate/> */}
+        <FormUpdate/>
         {/* <MentoringDashboard/> */}
         {/* <BasicCalendar/> */}
       </main>

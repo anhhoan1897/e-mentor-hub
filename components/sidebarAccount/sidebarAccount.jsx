@@ -6,11 +6,17 @@ import { useState } from "react";
 export default function SidebarAccount(currentRouter) {
   const currentRoute = currentRouter.currentRouter;
   const [isMentoringDashboard, setIsMentoringDashboard] = useState("");
+  const [isMentoringSession, setIsMentoringSession] = useState("");
+  const [isAccount, setIsAccount] = useState("");
   const [isCalendar, setIsCalendar] = useState("");
   useEffect(() => {
       switch (currentRoute) {
         case "/mentoring-dashboard":
           return setIsMentoringDashboard("active");
+        case "/mentoring-sessions":
+          return setIsMentoringSession("active");
+        case "/account":
+          return setIsAccount("active");
         case "/calendar":
           return setIsCalendar("active");
       }
@@ -65,8 +71,8 @@ export default function SidebarAccount(currentRouter) {
           </li>
           <li>
             <a
-              href="https://ementorhub.com/mentoring-sessions/?role=mentee"
-              className=""
+              href="http://localhost:3000/mentoring-sessions"
+              className={isMentoringSession}
             >
               <svg
                 width="24"
@@ -150,7 +156,8 @@ export default function SidebarAccount(currentRouter) {
             </a>
           </li>
           <li>
-            <a href="https://ementorhub.com/acount/?role=mentee" className="">
+            <a href="http://localhost:3000/account"
+              className={isAccount}>
               <svg
                 width="24"
                 height="24"
@@ -176,7 +183,8 @@ export default function SidebarAccount(currentRouter) {
           </li>
           <li>
             {/* <Link href="calendar"> */}
-            <a href="http://localhost:3000/calendar" className={isCalendar}>
+            <a href="http://localhost:3000/calendar" 
+              className={isCalendar}>
               <svg
                 width="24"
                 height="24"
