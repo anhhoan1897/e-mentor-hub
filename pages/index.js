@@ -10,8 +10,12 @@ import FormUpdate from '../components/formUpdate'
 import MentoringDashboard from './mentoring-dashboard/metoringDashboard'
 // import Calendar from '../components/calendar/calendar'
 import BasicCalendar from '../components/calendar/calendar';
+import cookie from 'react-cookies';
+import { useRouter } from 'next/router'
 
 export default function Home() {
+  const token = cookie.load('token');
+  const router = useRouter()
   return (
     <div>
       {/* <Head>
@@ -34,6 +38,7 @@ export default function Home() {
         </div> */}
         {/* <FormUpdate/> */}
         <MentoringDashboard/>
+        {/* {token ? <MentoringDashboard/> : router.push('/login')} */}
         {/* <BasicCalendar/> */}
       </main>
     </div>

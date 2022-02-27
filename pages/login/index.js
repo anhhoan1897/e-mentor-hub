@@ -6,7 +6,14 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import Api from '../../api/api';
 import cookie from 'react-cookies';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import { appConfig } from '../../config/app.config';
+import { GoogleLogin } from 'react-google-login';
+import FacebookLogin  from 'react-facebook-login';
+import { Modal, ModalBody } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
+import axios from "axios";
 
 const schema = yup.object().shape({
   email: yup.string().required('Email can not be null').email("Invalid email format"),
@@ -22,6 +29,8 @@ export default function Login() {
   });
   const router = useRouter()
   const [error, setError] = useState('');
+  const [messageModal, setMessageModal] = useState('');
+  const [toggleModal, setToggleModal] = useState(false);
 
   const onSubmit = async (values) => {
     try {
@@ -37,8 +46,53 @@ export default function Login() {
     }
   };
 
+  const onGoogleSuccess = async (response) => {
+    const result = response?.profileObj;
+    // const token = response?.tokenId;
+    axios({
+      method: 'post',
+      mode: 'no-cors',
+      url: appConfig.apiUrl + 'createUser',
+      withCredentials: false,
+      headers: {
+        'Access-Control-Allow-Origin' : '*',
+      },
+      data: {
+        email: result.email,
+        googleId: result.googleId
+      }
+    })
+    .then(function (response) {
+      router.push('/update-mentee');
+    })
+    .catch(function (error) {
+      console.log(error);
+      let data = error.response.data;
+      let errorMessage = data.errors ? data.errors[0].errorMessage : data;
+      setMessageModal(errorMessage);
+      setToggleModal(true);
+      setTimeout(() => {setToggleModal(false)}, 3000);
+    });
+  }
+
+  const onGoogleFailure = (response) => {
+    console.log(response);
+  }
+
+  const componentClicked = () => {
+    console.log("clicked");
+  };
+
   return (
     <div className="authenicate-container">
+      <Modal isOpen={toggleModal}>
+        <ModalBody className='justify-content-center'>
+          <div className="register-modal">
+          <FontAwesomeIcon icon={faExclamationTriangle} size="4x" color="red"/><br/>
+            {messageModal}
+          </div>
+        </ModalBody>
+      </Modal>
       <div className="left-side-bar">
         <h2 className="text-center">
           A powerful <br /> platform for{" "}
@@ -64,6 +118,30 @@ export default function Login() {
           <div className="content-container login">
             <h1 className="title-form title-login">Xin chào từ eMentorHub</h1>
             <p>Chào mừng trở lại! Xin hãy đăng nhập vào tài khoản của bạn</p>
+            <div className="single-sign-on">
+              <div className="sign-in-google">
+                <GoogleLogin
+                  clientId={appConfig.googleClientId}
+                  buttonText="Sign in with Google"
+                  onSuccess={onGoogleSuccess}
+                  onFailure={onGoogleFailure}
+                  cookiePolicy={'single_host_origin'}
+                />
+              </div>
+              <div className="sign-in-google">
+                <FacebookLogin
+                  cssClass="sign-in-facebook"
+                  appId={appConfig.facebookAppId}
+                  autoLoad={true}
+                  textButton="Sign in with Facebook"
+                  fields="name,email,picture"
+                  onClick={componentClicked}
+                  callback={onGoogleSuccess}
+                  icon="fa-facebook"
+                />
+              </div>
+            </div>
+            <span className="or-class">OR</span>
             <section className="login-form-container">
               <form onSubmit={handleSubmit(onSubmit)} className="authen-form">
                 <section className="input-field login-field">

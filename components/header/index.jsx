@@ -49,10 +49,14 @@ export default function NavigationHeader() {
         <Nav className="nav-menu-buttons">
           <button className="menu-button sign-up">
             <Link href="/register">
-              <a>Đăng kí</a>
+              <a className="sign-up-text">Đăng kí</a>
             </Link>
           </button>
-          <button className="menu-button sign-in">Đăng nhập</button>
+          <button className="menu-button sign-in">
+            <Link href="/login">
+              <a className="sign-in-text">Đăng nhập</a>
+            </Link>
+          </button>
         </Nav>
         <div className="search-button">
           <FontAwesomeIcon icon={faSearch} alt="search" />

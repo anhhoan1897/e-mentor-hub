@@ -2,6 +2,28 @@
 .authenicate-container {
   .right-side-user {
     .options-container {
+      .single-sign-on {
+        .sign-in-facebook, .sign-in-google {
+          display: inline;
+          background-color: #4c69ba;
+          color: var(--white);
+          height: 44px;
+          .sign-in-facebook-icon, .sign-in-google-icon {
+            width: 45px;
+            padding: 10px;
+          }
+          .sign-in-facebook-text, .sign-in-google-text { 
+            flex: 1;
+            text-align: center;
+            font-size: 16px;
+          }
+        }
+      }
+      .or-class {
+        display: flex;
+        justify-content: center;
+        color: #475261;
+      }
       .login {
         .title-login {
           font-weight: 600;

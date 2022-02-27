@@ -14,6 +14,9 @@ import Api from '../../api/api';
 import { Modal, ModalBody } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
+import { appConfig } from '../../config/app.config';
+import googleSigninButton from "../../assets/images/google-signin-button.png";
+import facebookSigninButton from "../../assets/images/facebook-signin-button.png";
 
 const schema = yup.object().shape({
   email: yup.string().required('Email can not be null').email("Invalid email format"),
@@ -91,6 +94,33 @@ function Register() {
           {/* {isChoose ? ( */}
             <div className="content-container register">
               <h1 className="title-form title-register">Đăng ký</h1>
+              <div className="single-sign-on">
+                <a href={appConfig.googleAuthUrl} className="sign-in-google">
+                  <Image 
+                    src={googleSigninButton}
+                    alt="google"
+                    width={30}
+                    height={30}
+                    className="sign-in-facebook-icon"
+                  />
+                  <span className="sign-in-google-text">
+                    Sign up with Google
+                  </span>
+                </a>
+                <a href={appConfig.facebookAuthUrl} className="sign-in-facebook">
+                  <Image 
+                    src={facebookSigninButton}
+                    alt="facebook"
+                    width={30}
+                    height={30}
+                    className="sign-in-facebook-icon"
+                  />
+                  <span className="sign-in-facebook-text">
+                    Sign up with Facebook
+                  </span>
+                </a>
+              </div>
+              <span className="or-class">OR</span>
               <form className="authen-form" onSubmit={handleSubmit(onSubmit)}>
                 <section className="input-field register-field">
                   <label>Email</label>
